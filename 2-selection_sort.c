@@ -18,8 +18,10 @@ void selection_sort(int *array, size_t size)
 	{
 		minval = array + i;
 		for (j = i + 1; j < size; j++)
-			minval = (array[j] < *minval) ? (array + j) : minval;
-
+		{
+			if (array[j] < *minval)
+				minval = (array + j);
+		}
 		if ((array + 1) != minval)
 		{
 			swap_ints(array + i, minval);
