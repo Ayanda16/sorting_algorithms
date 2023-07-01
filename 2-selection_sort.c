@@ -19,7 +19,7 @@ void selection_sort(int *array, size_t size)
 			if (array[j] < *minval)
 				minval = (array + j);
 		}
-		if ((array + 1) != minval)
+		if ((array + i) != minval)
 		{
 			swap_ints(array + i, minval);
 			print_array(array, size);
