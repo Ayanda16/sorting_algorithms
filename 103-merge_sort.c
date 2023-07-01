@@ -57,14 +57,14 @@ void merge_sub(int *subarray, int *buffer, size_t low, size_t mid, size_t high)
 
 void merge_sort_call(int *subarray, int *buffer, size_t low, size_t high)
 {
-	size_t middle;
+	size_t mid;
 
 	if (high - low > 1)
 	{
-		middle = low + (high - low) / 2;
-		merge_sort_call(subarray, buffer, low, middle);
-		merge_sort_call(subarray, buffer, middle, high);
-		merge_sub(subarray, buffer, low, middle, high);
+		mid = low + (high - low) / 2;
+		merge_sort_call(subarray, buffer, low, mid);
+		merge_sort_call(subarray, buffer, mid, high);
+		merge_sub(subarray, buffer, low, mid, high);
 	}
 }
 
