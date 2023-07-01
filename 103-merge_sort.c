@@ -8,6 +8,7 @@
  * @mid: mid partition.
  * @high: high partition.
 */
+
 void merge_sub(int *subarray, int *buffer, size_t low, size_t mid, size_t high)
 {
 	size_t lower;
@@ -22,14 +23,8 @@ void merge_sub(int *subarray, int *buffer, size_t low, size_t mid, size_t high)
 
 	for (lower = low, middle = mid; lower < mid && middle < high; a++)
 	{
-		if (subarray[lower] < subarray[middle])
-		{
-			buffer[a] = subarray[lower++];
-		}
-		else
-		{
-			buffer[a] = subarray[middle++];
-		}
+		buffer[a] = (subarray[lower] < subarray[middle])
+			? subarray[lower++] : subarray[middle++];
 	}
 	for (; lower < middle; lower++)
 	{
