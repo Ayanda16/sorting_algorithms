@@ -26,4 +26,19 @@ void selection_sort(int *array, size_t size)
 			print_array(array, size);
 		}
 	}
-}				
+}
+
+/**
+ * swap_ints - swap two integers in an array
+ * @a: integer 1 to swap
+ * @b: integer 2 to swap
+ */
+
+void swap_ints(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
