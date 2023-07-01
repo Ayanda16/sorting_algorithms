@@ -66,7 +66,7 @@ void lomuto_sort(int *array, size_t size, int start, int last)
 
 	if (last - start > 0)
 	{
-		part = lomuto_partition(array, size, last, start);
+		part = lomuto_partition(array, size, start, last);
 		lomuto_sort(array, size, start, part - 1);
 		lomuto_sort(array, size, part + 1, last);
 	}
